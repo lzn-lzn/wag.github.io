@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAG | 下一代智能杀毒解决方案</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #0a0e17;
+            color: #fff;
+        }
+
+        .nav {
+            background: linear-gradient(90deg, #1a237e, #4a148c);
+            padding: 1.5rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, #00bcd4, #3d5afe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b') center/cover;
+            display: flex;
+            align-items: center;
+            padding: 0 8%;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1.5s;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(45deg, #00bcd4, #3d5afe);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .features {
+            padding: 5rem 8%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.05);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(255,255,255,0.08);
+        }
+
+        .icon {
+            font-size: 2.5rem;
+            color: #3d5afe;
+            margin-bottom: 1rem;
+        }
+
+        .cta {
+            background: #1a237e;
+            text-align: center;
+            padding: 5rem 8%;
+        }
+
+        .btn {
+            background: linear-gradient(45deg, #00bcd4, #3d5afe);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        footer {
+            background: #0d111a;
+            padding: 3rem 8%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="logo">WAG</div>
+        <div class="nav-links">
+            <a href="#features" style="color: white; margin-left: 2rem;">功能</a>
+            <a href="#tech" style="color: white; margin-left: 2rem;">技术</a>
+            <a href="#download" style="color: white; margin-left: 2rem;">下载</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>重新定义网络安全</h1>
+            <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.9;">
+                基于人工智能的下一代终端防护解决方案，为您提供军事级的安全保障
+            </p>
+            <button class="btn" style="margin-top: 2rem;">立即体验</button>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="card">
+            <i class="icon fas fa-shield-alt"></i>
+            <h3>实时防护</h3>
+            <p>基于行为分析的主动防御系统，7×24小时守护您的数字资产</p>
+        </div>
+        <div class="card">
+            <i class="icon fas fa-brain"></i>
+            <h3>AI 引擎</h3>
+            <p>深度神经网络驱动的威胁检测系统，未知威胁识别率提升300%</p>
+        </div>
+        <div class="card">
+            <i class="icon fas fa-bolt"></i>
+            <h3>极速扫描</h3>
+            <p>多线程扫描引擎，全盘扫描时间缩短至传统杀软的1/4</p>
+        </div>
+    </section>
+
+    <section class="cta" id="download">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">立即加入安全革命</h2>
+        <button class="btn">下载 WAG 测试版</button>
+    </section>
+
+    <footer>
+        <p style="opacity: 0.7;">© 2023 WAG Security. All rights reserved.</p>
+        <div style="margin-top: 2rem;">
+            <i class="fab fa-github" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
+            <i class="fab fa-twitter" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
+            <i class="fas fa-envelope" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
+        </div>
+    </footer>
+</body>
+</html>
