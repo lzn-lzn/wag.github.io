@@ -36,6 +36,17 @@
             -webkit-text-fill-color: transparent;
         }
 
+        .nav-links a {
+            color: white;
+            margin-left: 2rem;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+
         .hero {
             height: 80vh;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
@@ -85,6 +96,36 @@
             margin-bottom: 1rem;
         }
 
+        /* 软件截图展示区 */
+        .screenshots {
+            padding: 5rem 8%;
+            background: #0d111a;
+        }
+
+        .screenshot-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .screenshot {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .screenshot:hover {
+            transform: scale(1.03);
+        }
+
+        .screenshot img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
         .cta {
             background: #1a237e;
             text-align: center;
@@ -99,7 +140,14 @@
             border-radius: 30px;
             font-size: 1.1rem;
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(61, 90, 254, 0.3);
         }
 
         @keyframes fadeIn {
@@ -112,15 +160,27 @@
             padding: 3rem 8%;
             text-align: center;
         }
+
+        .social-icon {
+            font-size: 1.5rem;
+            margin: 0 1rem;
+            color: #fff;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #00bcd4;
+        }
     </style>
 </head>
 <body>
     <nav class="nav">
         <div class="logo">WAG</div>
         <div class="nav-links">
-            <a href="#features" style="color: white; margin-left: 2rem;">功能</a>
-            <a href="#tech" style="color: white; margin-left: 2rem;">技术</a>
-            <a href="#download" style="color: white; margin-left: 2rem;">下载</a>
+            <a href="#features">功能</a>
+            <a href="#screenshots">界面展示</a>
+            <a href="#download">下载</a>
+            <a href="https://example.com/docs" target="_blank">文档</a> <!-- 示例文档链接 -->
         </div>
     </nav>
 
@@ -130,7 +190,7 @@
             <p style="font-size: 1.2rem; line-height: 1.6; opacity: 0.9;">
                 基于人工智能的下一代终端防护解决方案，为您提供全方位的安全保障
             </p>
-            <button class="btn" style="margin-top: 2rem;">立即体验</button>
+            <a href="#download" class="btn" style="margin-top: 2rem;">立即体验</a>
         </div>
     </section>
 
@@ -139,30 +199,64 @@
             <i class="icon fas fa-shield-alt"></i>
             <h3>实时防护</h3>
             <p>基于行为分析的主动防御系统，7×24小时守护您的数字资产</p>
+            <a href="https://example.com/realtime-protection" style="color: #3d5afe; display: inline-block; margin-top: 1rem;">了解更多 →</a>
         </div>
         <div class="card">
             <i class="icon fas fa-brain"></i>
             <h3>AI 引擎</h3>
             <p>深度神经网络驱动的威胁检测系统，未知威胁识别率提升300%</p>
+            <a href="https://example.com/ai-engine" style="color: #3d5afe; display: inline-block; margin-top: 1rem;">了解更多 →</a>
         </div>
         <div class="card">
             <i class="icon fas fa-bolt"></i>
             <h3>极速扫描</h3>
             <p>多线程扫描引擎，全盘扫描时间缩短至传统杀软的1/4</p>
+            <a href="https://example.com/fast-scan" style="color: #3d5afe; display: inline-block; margin-top: 1rem;">了解更多 →</a>
+        </div>
+    </section>
+
+    <!-- 新增的软件截图展示区 -->
+    <section class="screenshots" id="screenshots">
+        <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">软件界面展示</h2>
+        <p style="text-align: center; opacity: 0.8;">直观易用的操作界面，强大的安全防护一目了然</p>
+        <div class="screenshot-container">
+            <div class="screenshot">
+                <img src="https://via.placeholder.com/600x400/1a237e/ffffff?text=WAG+主界面" alt="WAG主界面">
+            </div>
+            <div class="screenshot">
+                <img src="https://via.placeholder.com/600x400/3d5afe/ffffff?text=病毒扫描界面" alt="病毒扫描界面">
+            </div>
+            <div class="screenshot">
+                <img src="https://via.placeholder.com/600x400/00bcd4/ffffff?text=实时防护仪表盘" alt="实时防护仪表盘">
+            </div>
+            <div class="screenshot">
+                <img src="https://via.placeholder.com/600x400/4a148c/ffffff?text=设置中心" alt="设置中心">
+            </div>
         </div>
     </section>
 
     <section class="cta" id="download">
         <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">立即加入安全革命</h2>
-        <button class="btn">下载 WAG </button>
+        <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+            <a href="https://example.com/download/windows" class="btn">
+                <i class="fab fa-windows"></i> Windows 版
+            </a>
+            <a href="https://example.com/download/mac" class="btn">
+                <i class="fab fa-apple"></i> Mac 版
+            </a>
+            <a href="https://example.com/download/linux" class="btn">
+                <i class="fab fa-linux"></i> Linux 版
+            </a>
+        </div>
     </section>
 
     <footer>
         <p style="opacity: 0.7;">© 2023-2025 WAG Security. All rights reserved.</p>
         <div style="margin-top: 2rem;">
-            <i class="fab fa-github" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
-            <i class="fab fa-twitter" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
-            <i class="fas fa-envelope" style="font-size: 1.5rem; margin: 0 1rem; cursor: pointer;"></i>
+            <a href="https://github.com/wag-security" class="social-icon" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://twitter.com/wag_security" class="social-icon" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="mailto:support@wag.com" class="social-icon"><i class="fas fa-envelope"></i></a>
+            <a href="https://example.com/forum" class="social-icon" target="_blank"><i class="fas fa-comments"></i></a>
         </div>
     </footer>
 </body>
